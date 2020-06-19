@@ -64,9 +64,9 @@ class _DeliveryState extends State<Delivery> {
                   Center(child: Text('${m["name"]}...........')),
                   Center(child: Text(m["price"].toString())),
                   Padding(padding:EdgeInsets.symmetric( horizontal: 20), child: 
-                  SizedBox(width: 15 ,height: 15, child:  FloatingActionButton(
+                  SizedBox(width: 20 ,height: 20, child:  FloatingActionButton(
                     heroTag: null,
-                    child: Icon(Icons.add, size: 10,),onPressed: (){
+                    child: Icon(Icons.add, size: 15,),onPressed: (){
                     setState(() {
                     order.add(m);
                     total += m["price"];
@@ -82,7 +82,8 @@ class _DeliveryState extends State<Delivery> {
                   color: Colors.blue,
                   child: Text("Payment"),    
                   onPressed: () {
-                    Navigator.pushNamed(context, '/location');
+                
+                    Navigator.pushNamed(context, '/location', arguments:  resturantData);
                   }))
               ].where((w) => w != null).toList(),
             ),

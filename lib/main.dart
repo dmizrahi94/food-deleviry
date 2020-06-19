@@ -14,21 +14,29 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-        title: 'Flutter Demo',
-        theme: ThemeData(
-          primarySwatch: Colors.blue,
-        ),
-        home: MyHomePage(title: 'Food delivery'),
-        routes: <String, WidgetBuilder> {
-      '/delivery': (BuildContext context) => Delivery(title: 'Delivery'),
-      '/map': (BuildContext context) => Map(),
-      '/order':(BuildContext context) => Order(),
-      '/payment':(BuildContext context) => Payment(),
-      '/location':(BuildContext context) => Location(),
-      '/menu':(BuildContext context) => Menu(title: "Food Delivery",),
-    },
-);
+      title: 'Flutter Demo',
+      theme: ThemeData(
+        primarySwatch: Colors.blue,
+      ),
+      home: MyHomePage(title: 'Food delivery'),
+      onGenerateRoute: (routeSettings) {
+        switch (routeSettings.name) {
+          case '/map':
+            return MaterialPageRoute(
+                builder: (context) => Map(routeSettings.arguments));
+          case '/location':
+            return MaterialPageRoute(
+                builder: (context) => Location(routeSettings.arguments));
+        }
+      },
+      routes: <String, WidgetBuilder>{
+        '/delivery': (BuildContext context) => Delivery(title: 'Delivery'),
+        '/order': (BuildContext context) => Order(),
+        '/payment': (BuildContext context) => Payment(),
+        '/menu': (BuildContext context) => Menu(
+              title: "Food Delivery",
+            ),
+      },
+    );
   }
 }
-
-

@@ -1,6 +1,10 @@
 import 'package:flutter/material.dart' ;
 class Location extends StatefulWidget {
-  Location() : super();
+  final dynamic resturant;
+
+  Location(resturant)
+      : resturant = resturant,
+        super();
   @override
   _LocationState createState() => _LocationState();
 }
@@ -32,7 +36,7 @@ class _LocationState extends State<Location> {
                   color: Colors.blue,
                   child: Text(" See Loction"),    
                   onPressed: () {
-                    Navigator.pushNamed(context, '/map');
+                    Navigator.pushNamed(context, '/map', arguments: widget.resturant);
                   })),
                  Padding(padding: EdgeInsets.only(bottom: 10)),
                  Center(child: FlatButton( 
