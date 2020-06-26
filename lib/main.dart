@@ -6,11 +6,13 @@ import './screen/order.dart';
 import './screen/payment.dart';
 import './screen/location.dart';
 import 'screen/menu.dart';
+import 'screen/orderHistory.dart';
 
 void main() => runApp(MyApp());
 
 class MyApp extends StatelessWidget {
   // This widget is the root of your application.
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -18,6 +20,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
+
       home: MyHomePage(title: 'Food delivery'),
       onGenerateRoute: (routeSettings) {
         switch (routeSettings.name) {
@@ -36,6 +39,7 @@ class MyApp extends StatelessWidget {
         '/menu': (BuildContext context) => Menu(
               title: "Food Delivery",
             ),
+        '/orderHistory':(BuildContext context) => OrderHistory(),
       },
     );
   }

@@ -22,7 +22,7 @@ class _MenuState extends State<Menu> {
               mainAxisAlignment: MainAxisAlignment.start,
               children: <Widget>[
                 Text(
-                  "Hi ${args["name"]} :)",
+                  "Hi ${args != null ? args["name"] : ""} :)",
                   style: TextStyle(fontSize: 20),
                 ),
                 Padding(padding: EdgeInsets.only(bottom: 10)),
@@ -38,7 +38,9 @@ class _MenuState extends State<Menu> {
                   ),
                 ),
                 FlatButton(
-                  onPressed: () {},
+                  onPressed: () {
+                    Navigator.pushNamed(context, '/orderHistory');
+                  },
                   color: Colors.blue,
                   child: Text(
                     "Order history",
