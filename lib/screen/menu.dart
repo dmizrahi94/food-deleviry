@@ -22,11 +22,11 @@ class _MenuState extends State<Menu> {
               mainAxisAlignment: MainAxisAlignment.start,
               children: <Widget>[
                 Text(
-                  "Hi ${args != null ? args["name"] : ""} :)",
+                  "Hi ${args != null ? args["name"] : ""},",
                   style: TextStyle(fontSize: 20),
                 ),
                 Padding(padding: EdgeInsets.only(bottom: 10)),
-                Text("Glad to see you again"),
+                Text("Glad to see you again :)"),
                 Padding(padding: EdgeInsets.only(bottom: 100)),
                 FlatButton(
                   onPressed: () {
@@ -34,8 +34,13 @@ class _MenuState extends State<Menu> {
                   },
                   color: Colors.blue,
                   child: Text(
-                    "Make new Order",
+                    "New Order",
                   ),
+                ),
+                Image(
+                  image: AssetImage("lib/images/food.jpeg"),
+                  width: 300,
+                  height: 300,
                 ),
                 FlatButton(
                   onPressed: () {

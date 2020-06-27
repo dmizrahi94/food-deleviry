@@ -21,7 +21,6 @@ class _PaymentState extends State<Payment> {
               mainAxisAlignment: MainAxisAlignment.start,
               children: <Widget>[
                 TextField(
-                  obscureText: true,
                   keyboardType: TextInputType.number,
                   decoration: InputDecoration(
                     border: OutlineInputBorder(),
@@ -30,7 +29,6 @@ class _PaymentState extends State<Payment> {
                 ),
                 Padding(padding: EdgeInsets.only(bottom: 20)),
                 TextField(
-                  obscureText: true,
                   keyboardType: TextInputType.number,
                   decoration: InputDecoration(
                     border: OutlineInputBorder(),
@@ -39,7 +37,6 @@ class _PaymentState extends State<Payment> {
                 ),
                 Padding(padding: EdgeInsets.only(bottom: 20)),
                 TextField(
-                  obscureText: true,
                   keyboardType: TextInputType.datetime,
                   decoration: InputDecoration(
                     border: OutlineInputBorder(),

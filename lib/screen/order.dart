@@ -31,7 +31,7 @@ class _OrderState extends State<Order> {
             child: Column(
               mainAxisAlignment: MainAxisAlignment.start,
               children: <Widget>[
-                Text("your order is on the way ..."),
+                Text("your order is on the way ...", style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),),
                 Padding(
                   padding: EdgeInsets.only(bottom: 10),
                 ),

@@ -24,8 +24,6 @@ class _LocationState extends State<Location> {
               mainAxisAlignment: MainAxisAlignment.start,
               children: <Widget>[
                        TextField(
-                  obscureText: true,
-                  keyboardType: TextInputType.number,
                   decoration: InputDecoration(
                     border: OutlineInputBorder(),
                     labelText: 'Address',

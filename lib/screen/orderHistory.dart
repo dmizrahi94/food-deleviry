@@ -32,22 +32,29 @@ class _OrderHistoryState extends State<OrderHistory> {
             child: Column(
               mainAxisAlignment: MainAxisAlignment.start,
               children: <Widget>[
-
                 Padding(
                   padding: EdgeInsets.symmetric(vertical: 10),
                 ),
-                Text("Resturant | Total | Date"),
+                Text(
+                  "Resturant | Total | Date",
+                  style: TextStyle(fontWeight: FontWeight.bold, fontSize: 20),
+                ),
+                Padding(
+                  padding: EdgeInsets.symmetric(vertical: 10),
+                ),
                 Column(
-                  children: orders.orders.map((order) =>Padding(
-                    padding: EdgeInsets.symmetric(vertical: 10),
-                    child:  Row(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                    children: <Widget>[
-                      Text("${order["resturant"]} | "),
-                      Text("${order["total"].toString()} | "),
-                      Text(order["orderTime"])
-                    ],
-                  ))).toList(),
+                  children: orders.orders
+                      .map((order) => Padding(
+                          padding: EdgeInsets.symmetric(vertical: 10),
+                          child: Row(
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            children: <Widget>[
+                              Text("${order["resturant"]} | "),
+                              Text("${order["total"].toString()} NIS | "),
+                              Text(order["orderTime"])
+                            ],
+                          )))
+                      .toList(),
                 ),
               ].where((w) => w != null).toList(),
             ),

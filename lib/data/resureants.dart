@@ -29,7 +29,7 @@ const resturants = [
   },
   {
     "id": 3,
-    "name": "Ice Creame",
+    "name": "Ice Cream",
     "address": "Rothschild Blvd 18",
     "cordinatex": 32.062902,
     "cordinatey": 34.771193,
